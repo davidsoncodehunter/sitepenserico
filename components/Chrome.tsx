@@ -1,21 +1,36 @@
 import Link from "next/link";
+import { Arrow } from "./Icons";
+
+function Logo() {
+  return (
+    <Link href="/" className="logo" aria-label="Pense Rico, página inicial">
+      <span className="logo-mark" aria-hidden>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M7 17 17 7M9 7h8v8" />
+        </svg>
+      </span>
+      <span className="logo-text">Pense Rico</span>
+    </Link>
+  );
+}
 
 export function Header() {
   return (
-    <>
-      <div className="promo">Black Friday Cripto · oferta por tempo limitado</div>
-      <header className="header">
-        <div className="wrap">
-          <Link href="/" className="brand"><i aria-hidden /> Pense Rico</Link>
-          <nav className="nav" aria-label="Principal">
-            <Link href="/#cursos">Cursos</Link>
-            <Link href="/#autor">Quem ensina</Link>
-            <Link href="/tutoriais">Tutoriais</Link>
-            <Link href="/#oferta" className="btn btn-amber">Quero o combo</Link>
-          </nav>
-        </div>
-      </header>
-    </>
+    <header className="nav-wrap">
+      <nav className="nav" aria-label="Principal">
+        <Logo />
+        <ul className="nav-links">
+          <li><Link href="/#cursos">Cursos</Link></li>
+          <li><Link href="/#metodo">Método</Link></li>
+          <li><Link href="/#autor">Quem ensina</Link></li>
+          <li><Link href="/#faq">Dúvidas</Link></li>
+          <li><Link href="/tutoriais">Tutoriais</Link></li>
+        </ul>
+        <Link href="/#oferta" className="nav-cta">
+          Quero o combo <Arrow size={15} />
+        </Link>
+      </nav>
+    </header>
   );
 }
 
@@ -23,18 +38,31 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="wrap">
-        <Link href="/" className="brand"><i aria-hidden /> Pense Rico</Link>
-        <div className="links">
-          <Link href="/#cursos">Cursos</Link>
-          <Link href="/tutoriais">Tutoriais</Link>
-          <Link href="/#faq">Perguntas</Link>
+        <div className="footer-top">
+          <div>
+            <Logo />
+            <p className="footer-about">Educação sobre o mercado de criptomoedas, com método e sem atalhos.</p>
+          </div>
+          <div className="footer-cols">
+            <div>
+              <h4>Site</h4>
+              <Link href="/#cursos">Cursos</Link>
+              <Link href="/#oferta">Oferta</Link>
+              <Link href="/#faq">Dúvidas</Link>
+            </div>
+            <div>
+              <h4>Conteúdo</h4>
+              <Link href="/tutoriais">Tutoriais</Link>
+              <Link href="/#autor">Quem ensina</Link>
+            </div>
+          </div>
         </div>
-        <small>
+        <p className="footer-risk">
           Aviso de risco: investimentos em criptomoedas são de alto risco e podem resultar em perda parcial ou total do
-          capital. Os conteúdos são educacionais e não constituem recomendação de investimento. Resultados passados ou
-          de outros alunos não garantem resultados futuros e variam de pessoa para pessoa.
-        </small>
-        <small>O Pense Rico © {new Date().getFullYear()} · Todos os direitos reservados</small>
+          capital. Os conteúdos são educacionais e não constituem recomendação de investimento. Resultados de outros
+          alunos não garantem resultados futuros e variam de pessoa para pessoa.
+        </p>
+        <p className="footer-copy">O Pense Rico © {new Date().getFullYear()} · Todos os direitos reservados</p>
       </div>
     </footer>
   );

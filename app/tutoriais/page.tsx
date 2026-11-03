@@ -11,17 +11,16 @@ export default function Tutoriais() {
     <>
       <Header />
       <main>
-        <section className="page-hero grain">
+        <section className="p-hero">
+          <div className="hero-bg" aria-hidden />
           <div className="wrap">
-            <span className="eyebrow">Tutoriais</span>
-            <h1>Passo a passo, <span className="em">sem enrolação</span>.</h1>
-            <p>Guias para copiar e seguir. Os primeiros chegam em breve.</p>
+            <span className="kicker">Tutoriais</span>
+            <h1 className="h-grad">Passo a passo, <span className="serif grad">sem enrolação</span>.</h1>
+            <p className="lead">Guias para copiar e seguir. Os primeiros chegam em breve.</p>
           </div>
         </section>
-        <section className="pad light">
-          <div className="wrap">
-            <div className="soon">Nenhum tutorial publicado ainda.</div>
-          </div>
+        <section className="sec" style={{ paddingTop: 20 }}>
+          <div className="wrap"><div className="empty">Nenhum tutorial publicado ainda.</div></div>
         </section>
       </main>
       <Footer />

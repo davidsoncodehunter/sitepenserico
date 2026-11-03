@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import { PIXEL_ID } from "@/lib/produtos";
 import "./globals.css";
 
-const display = Fraunces({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-display", display: "swap" });
-const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+// Geist: sans moderna e nítida para títulos e texto. Instrument Serif itálico só nas palavras de destaque.
+const sans = Geist({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://openserico.com.br"),
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: "#141413" };
+export const viewport: Viewport = { themeColor: "#0a0908" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="pt-BR" className={`${sans.variable} ${mono.variable} ${serif.variable}`}>
       <body>
         {children}
         <Script id="meta-pixel" strategy="afterInteractive">{`
