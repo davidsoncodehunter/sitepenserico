@@ -1,17 +1,17 @@
-# Fotos e artes para enviar
+# Imagens para enviar
 
-Salvar em `public/fotos/` e avisar o Claude. Enquanto não chegam, o site mostra espaços tracejados âmbar com o nome de cada peça.
+Salvar em `public/fotos/` com estes nomes. Pode ser PNG, JPG ou WebP. Até ~2 MB cada; o site otimiza.
 
-| Peça | Onde aparece | Tamanho | Observação |
+| Arquivo | Onde aparece | Tamanho (px) | Proporção |
 | --- | --- | --- | --- |
-| Davidson, meio corpo, fundo escuro | topo da página | 1200×1500 (4:5) | de preferência com fundo escuro ou recortado |
-| Davidson, retrato | seção "Quem ensina" | 1000×1250 (4:5) | olhando para a câmera |
-| Capa IF30 | vitrine e página do curso | 1200×1200 | arte do ChatGPT |
-| Capa Bitcoin Express | idem | 1200×1200 | |
-| Capa Formação Pense Rico | idem | 1200×1200 | |
-| Capa Minha Carteira Rica | idem | 1200×1200 | |
-| Capa do combo (os 4 juntos) | a definir | 1200×1200 | |
-| Banner largo do combo | a definir | 1920×1080 | |
-| Arte de cada bônus (3) | seção de bônus | 1200×800 | depende do texto dos bônus |
+| `capa-if30.png` | topo, vitrine e página do curso | 1200 × 1500 | 4:5 vertical |
+| `capa-bitcoin-express.png` | idem | 1200 × 1500 | 4:5 vertical |
+| `capa-formacao-pense-rico.png` | idem | 1200 × 1500 | 4:5 vertical |
+| `capa-minha-carteira-rica.png` | idem | 1200 × 1500 | 4:5 vertical |
+| `capa-combo.png` | topo (anel 3D) e oferta | 1200 × 1500 | 4:5 vertical |
+| `davidson-retrato.jpg` | seção "Quem ensina" | 1200 × 1500 | 4:5 vertical |
+| `davidson-topo.png` | topo da página (opcional) | 1600 × 2000 | 4:5, fundo transparente |
+| `compartilhar.jpg` | prévia ao enviar o link no WhatsApp/Instagram | 1200 × 630 | 1,91:1 horizontal |
+| `bonus-1.png`, `bonus-2.png`, `bonus-3.png` | bônus (quando definir) | 1200 × 800 | 3:2 horizontal |
 
-Estilo das artes: escuro com laranja-âmbar `#f5a524`, pouco texto dentro da imagem (o texto fica na página).
+Regras das artes: escuro com laranja-âmbar `#ffb020`; pouco texto dentro da imagem (o texto fica na página); deixar ~8% de margem nas bordas, porque os cantos são arredondados.
