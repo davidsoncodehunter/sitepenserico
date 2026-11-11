@@ -20,6 +20,9 @@ export type Categoria = (typeof CATEGORIAS)[number];
 export type TutorialMeta = {
   slug: string;
   titulo: string;
+  /** título em tarjas no topo da página (opcional): tarja1 branca, tarja2 âmbar */
+  tarja1: string;
+  tarja2: string;
   resumo: string;
   categoria: string;
   nivel: string;
@@ -69,7 +72,7 @@ function render(body: string) {
     const passo = texto.match(/^passo\s*(\d+)\s*[:.\-–—]?\s*(.*)$/i);
     if (passo) {
       toc.push({ id, texto: passo[2] || texto, passo: Number(passo[1]) });
-      return `<h2 id="${id}" class="t-passo"><span class="t-passo-n">${passo[1]}</span><span>${passo[2] || texto}</span></h2>`;
+      return `<h2 id="${id}" class="t-passo"><span class="t-passo-n">${passo[1].padStart(2, "0")}</span><span>${passo[2] || texto}</span></h2>`;
     }
     toc.push({ id, texto, passo: null });
     return `<h2 id="${id}">${inner}</h2>`;
@@ -83,6 +86,12 @@ function render(body: string) {
     return `<blockquote class="t-aviso t-${tipo}"><p><strong class="t-aviso-t">${nome.trim()}</strong>`;
   });
 
+  // cada seção "Passo N" vira um cartão creme, como as páginas do kit impresso
+  html = html
+    .split(/(?=<h2 )/)
+    .map((p) => (p.includes('class="t-passo"') ? `<section class="t-cartao">${p}</section>` : p))
+    .join("");
+
   return { html, toc };
 }
 
@@ -94,6 +103,8 @@ function load(file: string): Tutorial {
   return {
     slug,
     titulo: meta.titulo || slug,
+    tarja1: meta.tarja1 || "",
+    tarja2: meta.tarja2 || "",
     resumo: meta.resumo || "",
     categoria: meta.categoria || "primeiros-passos",
     nivel: meta.nivel || "Iniciante",

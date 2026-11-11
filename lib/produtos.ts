@@ -21,75 +21,95 @@ export type Produto = {
   aprende: string[];
   paraQuem: string;
   checkout: string | null;
+  /** arte da capa em /public/fotos; null usa a capa desenhada em CSS */
+  capa: string | null;
 };
 
 export const PRODUTOS: Produto[] = [
   {
     slug: "if30",
     numero: "01",
-    nome: "IF30",
-    gancho: "Mercado de futuros com método",
+    nome: "IF30 — Imersão Futuros 30 Dias",
+    gancho: "Do zero ao avançado em futuros, em 30 dias",
     descricao:
-      "Aprenda a operar o mercado de futuros com segurança e consistência, com regras claras de entrada, saída e gestão de risco.",
+      "Programa que leva você do zero ao avançado em futuros cripto: 30 dias intensivos de aulas gravadas, com suporte diário no Grupo Vip — 5 horas de teoria e 25 horas de suporte para a sua prática em grupo, para sair da turma confiante e preparado para operar futuros de forma consistente.",
     aprende: [
-      "Como funciona o mercado de futuros, sem mistério",
-      "Gestão de risco antes de qualquer operação",
-      "Rotina e disciplina para operar com consistência",
+      "30 dias intensivos de aulas, do zero ao avançado",
+      "5 horas de teoria e 25 horas de suporte para a sua prática em grupo",
+      "Suporte diário no Grupo Vip",
+      "Bônus: Indicador Pense Rico Futuros + grupo fechado de sinais e análises",
     ],
     paraQuem: "Para quem quer operar futuros com regras, não com palpite.",
     checkout: null,
+    capa: "/fotos/capa-if30.png",
   },
   {
     slug: "bitcoin-express",
     numero: "02",
     nome: "Bitcoin Express",
-    gancho: "Invista com liberdade e proteja o que é seu",
+    gancho: "O caminho rápido para proteger o que é seu com Bitcoin",
     descricao:
-      "O caminho direto para investir em Bitcoin com liberdade e proteger o seu patrimônio, do primeiro passo à custódia segura.",
+      "Cansado de ver o seu dinheiro perder valor? O Bitcoin Express é o treinamento direto para entender Bitcoin do zero ao avançado, proteger o seu patrimônio da inflação e ter controle total do próprio dinheiro — da primeira compra à custódia segura.",
     aprende: [
-      "Como comprar e guardar Bitcoin com segurança",
-      "Custódia: carteiras, chaves e boas práticas",
-      "Erros comuns que fazem iniciantes perder dinheiro",
+      "Bitcoin e criptomoedas do zero ao avançado: como funcionam e por que valorizam",
+      "Como comprar, vender e armazenar com segurança, com controle total do seu patrimônio",
+      "Como se proteger da inflação e das crises, e como identificar tendências do mercado",
+      "Renda passiva em cripto e exposição ao dólar, sempre com os riscos explicados",
+      "Bônus: acesso VIP ao grupo fechado de investidores, com suporte 24/7",
     ],
-    paraQuem: "Para quem quer começar em Bitcoin do jeito certo, sem tropeçar.",
+    paraQuem: "Para quem não quer mais depender do sistema para cuidar do próprio dinheiro.",
     checkout: null,
+    capa: "/fotos/capa-bitcoin-express.png",
   },
   {
     slug: "formacao-pense-rico",
     numero: "03",
     nome: "Formação Pense Rico",
-    gancho: "A mentalidade de quem pensa como investidor",
+    gancho: "Do zero absoluto ao mercado cripto completo",
     descricao:
-      "Desenvolva a mentalidade e as estratégias de quem realmente pensa como investidor, a base que sustenta todo o resto.",
+      "A formação completa em vídeo aulas para começar do zero absoluto: Bitcoin, Ethereum, altcoins e meme coins, técnicas de compra e venda, segurança e treinamento psicológico para dominar o mercado — sem precisar entender de informática.",
     aprende: [
-      "Mentalidade e comportamento diante do mercado",
-      "Estratégias de quem investe a longo prazo",
-      "Como tomar decisões sem se deixar levar pela emoção",
+      "Bitcoin, Ethereum, altcoins, meme coins, NFT e GameFi, do zero absoluto",
+      "Técnicas de compra, venda e trading, com gestão de risco e diversificação",
+      "Corretoras, segurança da informação e a parte de tecnologia, sem precisar ser de informática",
+      "Mentalidade, educação financeira e treinamento psicológico para dominar o mercado",
     ],
-    paraQuem: "Para quem quer construir a base antes de escolher a ferramenta.",
+    paraQuem: "Para quem quer começar do zero absoluto e caminhar com as próprias pernas.",
     checkout: null,
+    capa: "/fotos/capa-formacao-pense-rico.png",
   },
   {
     slug: "minha-carteira-rica",
     numero: "04",
     nome: "Minha Carteira Rica",
-    gancho: "Uma carteira sólida, montada com critério",
+    gancho: "Uma carteira de verdade, montada do zero, ao vivo",
     descricao:
-      "Construa uma carteira sólida e bem estruturada, entendendo o porquê de cada escolha e como acompanhar tudo no tempo.",
+      "Acompanhe em live semanal a construção de uma carteira de investimentos do zero: eu investindo dinheiro de verdade, com todos os cuidados, mostrando cada decisão — os acertos e os erros que milhares de investidores cometem. A meta é aberta: levar essa carteira ao primeiro milhão, ao vivo.",
     aprende: [
-      "Como montar e dividir uma carteira cripto",
-      "Critérios para escolher e acompanhar ativos",
-      "Quando revisar, ajustar e manter a calma",
+      "Live semanal: a carteira sendo montada e gerida do zero, na prática",
+      "Cada decisão explicada: os acertos e os erros que investidores cometem",
+      "Gestão de risco com dinheiro de verdade, com todos os cuidados",
+      "Quando a carteira bater a meta, haverá presente para quem participa da Formação, da Mentoria e da Comunidade",
     ],
-    paraQuem: "Para quem quer uma carteira pensada, não montada no impulso.",
+    paraQuem: "Para quem aprende vendo de verdade: dinheiro real, decisões reais, toda semana.",
     checkout: null,
+    capa: "/fotos/capa-minha-carteira-rica.png",
   },
 ];
 
 export const BONUS = [
-  { titulo: "Bônus 1", texto: "Descrição do bônus a definir." },
-  { titulo: "Bônus 2", texto: "Descrição do bônus a definir." },
-  { titulo: "Bônus 3", texto: "Descrição do bônus a definir." },
+  {
+    titulo: "Biblioteca do investidor",
+    texto: "Um drive completo de livros selecionados sobre mercado, investimentos e mentalidade, para estudar junto com os cursos.",
+  },
+  {
+    titulo: "Indicador Pense Rico no TradingView",
+    texto: "O indicador exclusivo do Pense Rico direto no seu TradingView, para acompanhar o mercado com a mesma leitura ensinada nas aulas.",
+  },
+  {
+    titulo: "Aulas bônus durante toda a permanência",
+    texto: "Novas aulas bônus vão sendo adicionadas ao longo do seu acesso, sem custo extra: o conteúdo continua crescendo depois da compra.",
+  },
 ];
 
 export const FAQ = [

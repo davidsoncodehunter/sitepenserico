@@ -59,8 +59,10 @@ export function Footer() {
         </div>
         <p className="footer-risk">
           Aviso de risco: investimentos em criptomoedas são de alto risco e podem resultar em perda parcial ou total do
-          capital. Os conteúdos são educacionais e não constituem recomendação de investimento. Resultados de outros
-          alunos não garantem resultados futuros e variam de pessoa para pessoa.
+          capital. O Davidson não é consultor nem conselheiro financeiro: os conteúdos são educacionais e não
+          constituem recomendação, consultoria ou conselho financeiro. Cada decisão de investimento é de
+          responsabilidade exclusiva de quem a toma. Resultados de outros alunos não garantem resultados futuros e
+          variam de pessoa para pessoa.
         </p>
         <p className="footer-copy">O Pense Rico © {new Date().getFullYear()} · Todos os direitos reservados</p>
       </div>

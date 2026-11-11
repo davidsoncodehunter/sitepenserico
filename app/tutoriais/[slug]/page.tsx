@@ -35,7 +35,7 @@ export default async function TutorialPage({ params }: Props) {
       <div className="readbar" aria-hidden />
       <Header />
       <main>
-        <section className="p-hero" style={{ paddingBottom: 40 }}>
+        <section className="p-hero t-hero" style={{ paddingBottom: 40 }}>
           <div className="hero-bg" aria-hidden />
           <div className="wrap">
             <Link href="/tutoriais" className="crumb"><Arrow size={15} /> Todos os tutoriais</Link>
@@ -45,7 +45,14 @@ export default async function TutorialPage({ params }: Props) {
               <span className="tmeta-i"><Clock size={15} /> {t.minutos} min de leitura</span>
               {t.rascunho && <span className="tag tag-rascunho">Rascunho (só no seu computador)</span>}
             </div>
-            <h1 className="h-grad" style={{ fontSize: "clamp(36px, 5.6vw, 72px)" }}>{t.titulo}</h1>
+            {t.tarja1 ? (
+              <h1 className="tarjas">
+                <span className="tarja">{t.tarja1}</span>
+                {t.tarja2 && <span className="tarja tarja-amber">{t.tarja2}</span>}
+              </h1>
+            ) : (
+              <h1 className="h-grad" style={{ fontSize: "clamp(36px, 5.6vw, 72px)" }}>{t.titulo}</h1>
+            )}
             {t.resumo && <p className="lead">{t.resumo}</p>}
           </div>
         </section>

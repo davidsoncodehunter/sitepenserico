@@ -45,7 +45,7 @@ export default async function Curso({ params }: Props) {
               <p style={{ marginTop: 32, color: "var(--muted)", fontSize: 19 }}>{p.paraQuem}</p>
             </div>
             <aside className="side">
-              <Capa numero={p.numero} nome={p.nome} />
+              <Capa numero={p.numero} nome={p.nome} src={p.capa ?? undefined} />
               <div className="box">
                 <h4>Faz parte do combo</h4>
                 <p>Leve os 4 cursos por {OFERTA.parcelas} ou {OFERTA.avista} à vista. {OFERTA.garantiaDias} dias de garantia.</p>

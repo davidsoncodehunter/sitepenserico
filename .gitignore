@@ -5,3 +5,6 @@ out
 .DS_Store
 .vercel
 next-env.d.ts
+._*
+**/._*
+tsconfig.tsbuildinfo

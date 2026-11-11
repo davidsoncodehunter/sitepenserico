@@ -4,7 +4,7 @@ import Checkout from "@/components/Checkout";
 import { Footer, Header } from "@/components/Chrome";
 import Counter from "@/components/Counter";
 import FotoSlot from "@/components/FotoSlot";
-import { Arrow, Check, Clock, Plus, Send, Shield } from "@/components/Icons";
+import { Arrow, Check, Clock, Instagram, Plus, Send, Shield, Youtube } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 import SlideCta from "@/components/SlideCta";
 import Spotlight from "@/components/Spotlight";
@@ -58,10 +58,14 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="stage" aria-hidden>
-            <div className="horizon" />
+          <div className="stage">
+            <div className="horizon" aria-hidden />
             <div className="fan">
-              {PRODUTOS.map((p) => <Capa key={p.slug} numero={p.numero} nome={p.nome} />)}
+              {PRODUTOS.map((p) => (
+                <Link key={p.slug} href={`/curso/${p.slug}`} className="fan-link" aria-label={`Conhecer o curso ${p.nome}`}>
+                  <Capa numero={p.numero} nome={p.nome} src={p.capa ?? undefined} />
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -127,16 +131,17 @@ export default function Home() {
             <div className="bento">
               {PRODUTOS.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 2) * 90} className={i === 0 || i === 3 ? "card-w wide-w" : "card-w"}>
-                  <Spotlight className={`card ${i === 0 || i === 3 ? "wide" : "narrow"}`}>
-                    <Tilt max={7}><Capa numero={p.numero} nome={p.nome} /></Tilt>
-                    <div className="card-tx">
-                      <h3>{p.nome}</h3>
-                      <p className="gancho serif" style={{ fontSize: 22 }}>{p.gancho}</p>
-                      <p className="desc">{p.descricao}</p>
-                      <ul>{p.aprende.slice(0, 3).map((a) => <li key={a}><Check size={17} />{a}</li>)}</ul>
-                      <Link href={`/curso/${p.slug}`} className="more">Ver detalhes <Arrow size={16} /></Link>
-                    </div>
-                  </Spotlight>
+                  <Link href={`/curso/${p.slug}`} className="card-link" aria-label={`Ver detalhes do curso ${p.nome}`}>
+                    <Spotlight className={`card ${i === 0 || i === 3 ? "wide" : "narrow"}`}>
+                      <Tilt max={7}><Capa numero={p.numero} nome={p.nome} src={p.capa ?? undefined} /></Tilt>
+                      <div className="card-tx">
+                        <h3>{p.nome}</h3>
+                        <p className="gancho serif" style={{ fontSize: 22 }}>{p.gancho}</p>
+                        <p className="desc">{p.paraQuem}</p>
+                        <span className="more">Ver detalhes <Arrow size={16} /></span>
+                      </div>
+                    </Spotlight>
+                  </Link>
                 </Reveal>
               ))}
             </div>
@@ -147,7 +152,7 @@ export default function Home() {
         <section id="autor" className="sec">
           <div className="wrap author">
             <Reveal className="author-photo">
-              <FotoSlot alt="Davidson, criador do Pense Rico" label="Foto do Davidson, retrato, 1000×1250" ratio="4 / 5" />
+              <FotoSlot src="/fotos/davidson-retrato.png" alt="Davidson, criador do Pense Rico" label="Foto do Davidson, retrato, 1000×1250" ratio="4 / 5" />
             </Reveal>
             <Reveal delay={120}>
               <span className="kicker">Quem ensina</span>
@@ -173,6 +178,14 @@ export default function Home() {
                 <span>Blockchain, DeFi e IA</span>
               </div>
               <div className="sign serif">Davidson</div>
+              <div className="socials">
+                <a href="https://www.instagram.com/davidson.penserico" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Davidson">
+                  <Instagram size={17} /><span>davidson.penserico</span>
+                </a>
+                <a href="https://www.youtube.com/@PenseRico" target="_blank" rel="noopener noreferrer" aria-label="Canal Pense Rico no YouTube">
+                  <Youtube size={17} /><span>Pense Rico</span>
+                </a>
+              </div>
             </Reveal>
           </div>
         </section>
@@ -210,6 +223,10 @@ export default function Home() {
                       <span><Shield size={15} /> {OFERTA.garantiaDias} dias de garantia</span>
                       <span><Check size={15} /> Compra segura pela Hotmart</span>
                     </div>
+                    <p className="mini-disclaimer" style={{ textAlign: "left", margin: "14px 0 0" }}>
+                      Acesso por {OFERTA.acesso}. Conteúdo educacional: não sou conselheiro financeiro e nada aqui é
+                      recomendação ou conselho de investimento; cada decisão é de responsabilidade de quem a toma.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -272,6 +289,10 @@ export default function Home() {
               <div className="ctas"><SlideCta href={COMBO_CHECKOUT} /></div>
               <p style={{ marginTop: 18, color: "var(--dim)", fontSize: 14 }}>
                 ou <Link href={COMBO_CHECKOUT} style={{ color: "var(--amber)", textDecoration: "underline" }}>clique aqui para ir direto ao checkout</Link>
+              </p>
+              <p className="mini-disclaimer">
+                Conteúdo educacional: não sou conselheiro financeiro e nada aqui é recomendação ou conselho de
+                investimento. Investir envolve risco, e cada decisão é de responsabilidade de quem a toma.
               </p>
             </Reveal>
           </div>

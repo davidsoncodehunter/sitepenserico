@@ -1,5 +1,7 @@
 ---
 titulo: Modelo de tutorial (exemplo de como as páginas ficam)
+tarja1: Modelo
+tarja2: de tutorial
 resumo: Este é um tutorial de exemplo, só para você ver como um passo a passo longo fica organizado no site. Ele não aparece para o público.
 categoria: primeiros-passos
 nivel: Iniciante
@@ -9,6 +11,8 @@ rascunho: sim
 ---
 
 Este texto de abertura aparece logo no começo. Ele explica **o que a pessoa vai conseguir fazer** ao terminar o tutorial e do que ela vai precisar antes de começar.
+
+> **Nota:** o visual padrão (aprovado em 11/11/2026, a partir do Kit Editor) é: topo preto com grade de pontinhos e título em tarjas (branca + âmbar, via `tarja1`/`tarja2` no cabeçalho), cada "Passo N:" vira um cartão creme com pontinhos e número vermelho, e bloco de código vira prompt escuro com barra âmbar e botão Copiar. Tudo automático — basta escrever o markdown.
 
 > **Importante:** este tutorial é só um modelo. Os tutoriais de verdade são escritos com você e publicados aqui.
 
