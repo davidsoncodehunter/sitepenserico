@@ -55,6 +55,12 @@ export function Footer() {
               <Link href="/tutoriais">Tutoriais</Link>
               <Link href="/#autor">Quem ensina</Link>
             </div>
+            <div>
+              <h4>Legal</h4>
+              <Link href="/privacidade">Privacidade</Link>
+              <Link href="/termos">Termos de uso</Link>
+              <a href="mailto:pensericodigital@gmail.com">Falar com a gente</a>
+            </div>
           </div>
         </div>
         <p className="footer-risk">

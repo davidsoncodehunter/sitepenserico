@@ -122,7 +122,8 @@ export function todosTutoriais(): Tutorial[] {
   if (!fs.existsSync(DIR)) return [];
   const publicar = process.env.NODE_ENV === "production";
   return fs.readdirSync(DIR)
-    .filter((f) => f.endsWith(".md"))
+    // "._nome.md" é lixo que o macOS cria no HD externo: parece tutorial e não é.
+    .filter((f) => f.endsWith(".md") && !f.startsWith("._"))
     .map(load)
     .filter((t) => !(publicar && t.rascunho))
     .sort((a, b) => a.ordem - b.ordem || b.data.localeCompare(a.data));

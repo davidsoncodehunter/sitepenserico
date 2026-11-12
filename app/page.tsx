@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BarraCompra from "@/components/BarraCompra";
 import Capa from "@/components/Capa";
 import Checkout from "@/components/Checkout";
 import { Footer, Header } from "@/components/Chrome";
@@ -19,6 +20,43 @@ const TRILHA = [
   { slug: "if30", t: "Operação com regras", d: "Mercado de futuros com entrada, saída e gestão de risco definidas antes de qualquer operação." },
   { slug: "minha-carteira-rica", t: "Tudo numa carteira", d: "Juntar o aprendizado numa carteira sólida, montada com critério e acompanhada com calma." },
 ];
+
+// Ficha da oferta e das dúvidas para o Google (não aparece na tela).
+const DADOS_PAGINA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      name: "Combo Pense Rico",
+      description:
+        "Combo com as quatro formações do Pense Rico sobre o mercado de criptomoedas: futuros, Bitcoin, formação completa e carteira acompanhada ao vivo.",
+      brand: { "@type": "Brand", name: "Pense Rico" },
+      offers: {
+        "@type": "Offer",
+        price: "1497.00",
+        priceCurrency: "BRL",
+        availability: "https://schema.org/InStock",
+        url: "https://openserico.com.br/#oferta",
+      },
+    },
+    ...PRODUTOS.map((p) => ({
+      "@type": "Course",
+      name: p.nome,
+      description: p.descricao,
+      url: `https://openserico.com.br/curso/${p.slug}`,
+      inLanguage: "pt-BR",
+      provider: { "@type": "Organization", name: "Pense Rico", url: "https://openserico.com.br" },
+    })),
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ.map((f) => ({
+        "@type": "Question",
+        name: f.p,
+        acceptedAnswer: { "@type": "Answer", text: f.r },
+      })),
+    },
+  ],
+};
 
 export default function Home() {
   const porSlug = Object.fromEntries(PRODUTOS.map((p) => [p.slug, p]));
@@ -299,7 +337,9 @@ export default function Home() {
           <div className="stage" aria-hidden><div className="horizon" /></div>
         </section>
       </main>
+      <BarraCompra />
       <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(DADOS_PAGINA) }} />
     </>
   );
 }
