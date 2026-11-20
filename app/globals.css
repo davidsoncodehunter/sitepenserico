@@ -59,6 +59,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav-links { display: flex; gap: 4px; }
 .nav-links a { display: block; padding: 8px 14px; border-radius: 999px; font-size: 14.5px; color: var(--muted); transition: color 0.2s, background 0.2s; }
 .nav-links a:hover { color: var(--text); background: rgba(255, 255, 255, 0.06); }
+.nav-ment { color: var(--amber-3) !important; font-weight: 600; }
+.nav-ment:hover { background: rgba(255, 176, 32, 0.12) !important; }
 .nav-cta {
   display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 999px;
   background: var(--grad-amber); color: #1a1100; font-weight: 600; font-size: 14.5px; white-space: nowrap;
@@ -162,15 +164,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 .bf-marq span { display: inline-flex; align-items: center; gap: 40px; padding: 14px 24px; font-size: clamp(18px, 2.2vw, 24px); letter-spacing: -0.02em; color: #1a1100; font-weight: 600; white-space: nowrap; }
 .bf-marq span::after { content: "✦"; opacity: 0.6; }
 .bf-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 5vw, 64px); align-items: center; padding-block: clamp(56px, 8vw, 96px); }
-.bf-capas { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.bf-c { aspect-ratio: 3 / 4; border-radius: 16px; }
-.bf-c-1, .bf-c-3 { transform: translateY(22px); }
+.bf-capas { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 420px; }
+.bf-c { aspect-ratio: 4 / 5; border-radius: 20px; border: 1px solid var(--line-2); box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.6); }
 .bf-tx .badge { margin-bottom: 18px; }
 .bf-tx h2 { font-size: clamp(28px, 3.4vw, 42px); margin-bottom: 16px; }
 .bf-tx p { color: var(--muted); font-size: 16.5px; max-width: 480px; margin-bottom: 26px; }
 .bf-garantia { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; color: var(--muted); font-size: 13.5px; }
 .bf-garantia svg { color: var(--amber); }
-@media (max-width: 860px) { .bf-grid { grid-template-columns: 1fr; } .bf-capas { grid-template-columns: repeat(4, 1fr); max-width: 420px; margin-inline: auto; } }
+@media (max-width: 860px) { .bf-grid { grid-template-columns: 1fr; } .bf-capas { max-width: 320px; margin-inline: auto; } }
 
 /* ---------- seções ---------- */
 .sec { padding-block: clamp(80px, 11vw, 150px); position: relative; }

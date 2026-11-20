@@ -25,6 +25,7 @@ export function Header() {
           <li><Link href="/#autor">Quem ensina</Link></li>
           <li><Link href="/#faq">Dúvidas</Link></li>
           <li><Link href="/tutoriais">Tutoriais</Link></li>
+          <li><Link href="/mentoria" className="nav-ment">Mentoria 1:1</Link></li>
         </ul>
         <Link href="/#oferta" className="nav-cta">
           Quero o combo <Arrow size={15} />
