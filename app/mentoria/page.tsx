@@ -24,32 +24,43 @@ export default function Mentoria() {
     <>
       <Header />
       <main>
-        {/* HERO */}
-        <section className="p-hero ment-hero">
+        {/* HERO — texto e foto lado a lado */}
+        <section className="sec ment-hero">
           <div className="hero-bg" aria-hidden />
-          <div className="wrap">
-            <span className="badge ment-badge"><b>Mentoria 1:1</b> Vagas limitadas por mês</span>
-            <h1 className="h-grad" style={{ marginTop: 20 }}>
-              {MENTORIA.nome}: <span className="serif grad">{MENTORIA.gancho.toLowerCase()}</span>
-            </h1>
-            <p className="lead">
-              Não é curso, não é turma: é atendimento individual comigo, {MENTORIA.cargaHoraria.toLowerCase()}, com foco
-              em resolver o que está travando o seu progresso e montar sua carteira cripto do jeito certo para o seu
-              momento.
-            </p>
-            <div className="ctas" style={{ marginTop: 28 }}>
-              <a href={MENTORIA_WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-amber btn-lg">
-                <Whatsapp size={18} /> Falar com o Davidson
-              </a>
-            </div>
-            <div className="checks">
-              <span><Clock size={17} /> {MENTORIA.cargaHoraria}</span>
-              <span><Shield size={17} /> {MENTORIA.suporte}</span>
-            </div>
+          <div className="wrap ment-hero-grid">
+            <Reveal>
+              <span className="badge ment-badge"><b>Mentoria 1:1</b> Vagas limitadas por mês</span>
+              <h1 className="h-grad" style={{ marginTop: 20 }}>
+                {MENTORIA.nome}: <span className="serif grad">{MENTORIA.gancho.toLowerCase()}</span>
+              </h1>
+              <p className="lead" style={{ marginTop: 18 }}>
+                Não é curso, não é turma: é atendimento individual comigo, {MENTORIA.cargaHoraria.toLowerCase()}, com
+                foco em resolver o que está travando o seu progresso e montar sua carteira cripto do jeito certo para o
+                seu momento.
+              </p>
+              <div className="ctas" style={{ marginTop: 28 }}>
+                <a href={MENTORIA_WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-amber btn-lg">
+                  <Whatsapp size={18} /> Falar com o Davidson
+                </a>
+              </div>
+              <div className="checks">
+                <span><Clock size={17} /> {MENTORIA.cargaHoraria}</span>
+                <span><Shield size={17} /> {MENTORIA.suporte}</span>
+              </div>
+            </Reveal>
+            <Reveal delay={120} className="ment-hero-photo">
+              <FotoSlot
+                src="/fotos/mentoria-premium.png"
+                alt="Mentoria Premium Personalizada"
+                label="Imagem premium da Mentoria"
+                ratio="4 / 5"
+                className="ment-foto"
+              />
+            </Reveal>
           </div>
         </section>
 
-        {/* O QUE ESTÁ INCLUSO */}
+        {/* O QUE ESTÁ INCLUSO — primeiro item em destaque, resto em grade menor */}
         <section className="sec" style={{ paddingTop: 20 }}>
           <div className="wrap">
             <Reveal className="sec-head">
@@ -58,13 +69,11 @@ export default function Mentoria() {
             </Reveal>
             <div className="ment-inclui">
               {MENTORIA_INCLUI.map((i, idx) => (
-                <Reveal key={i.titulo} delay={idx * 70}>
-                  <div className="ment-item">
-                    <Check size={20} />
-                    <div>
-                      <h4>{i.titulo}</h4>
-                      <p>{i.texto}</p>
-                    </div>
+                <Reveal key={i.titulo} delay={idx * 70} className={idx === 0 ? "ment-item-feat" : "ment-item"}>
+                  <div>
+                    <span className="ment-item-ic"><Check size={idx === 0 ? 26 : 20} /></span>
+                    <h4>{i.titulo}</h4>
+                    <p>{i.texto}</p>
                   </div>
                 </Reveal>
               ))}
@@ -72,22 +81,7 @@ export default function Mentoria() {
           </div>
         </section>
 
-        {/* FOTO PREMIUM */}
-        <section className="sec" style={{ paddingTop: 0 }}>
-          <div className="wrap ment-foto-wrap">
-            <Reveal>
-              <FotoSlot
-                src="/fotos/mentoria-premium.png"
-                alt="Mentoria Premium Personalizada"
-                label="Imagem premium da Mentoria"
-                ratio="3 / 4"
-                className="ment-foto"
-              />
-            </Reveal>
-          </div>
-        </section>
-
-        {/* FOCOS (ícones premium) */}
+        {/* FOCOS — grade assimétrica, ícones com brilho */}
         <section className="sec" style={{ background: "var(--bg-2)", borderBlock: "1px solid var(--line)" }}>
           <div className="wrap">
             <Reveal className="sec-head">
@@ -98,9 +92,9 @@ export default function Mentoria() {
               {MENTORIA_FOCOS.map((f, i) => {
                 const Icone = ICONES[f.icone as keyof typeof ICONES];
                 return (
-                  <Reveal key={f.titulo} delay={(i % 3) * 80}>
-                    <div className="ment-foco">
-                      <span className="ment-foco-ic"><Icone size={22} /></span>
+                  <Reveal key={f.titulo} delay={(i % 3) * 80} className={`ment-foco ment-foco-${i}`}>
+                    <div>
+                      <span className="ment-foco-ic"><Icone size={24} /></span>
                       <h4>{f.titulo}</h4>
                       <p>{f.texto}</p>
                     </div>
@@ -111,8 +105,8 @@ export default function Mentoria() {
           </div>
         </section>
 
-        {/* INVESTIMENTO */}
-        <section id="investimento" className="sec offer" style={{ borderTop: "1px solid var(--line)" }}>
+        {/* INVESTIMENTO — plano de um lado, oferta combinada e chamada do outro */}
+        <section id="investimento" className="sec ment-invest-sec">
           <div className="offer-bg" aria-hidden />
           <div className="wrap">
             <Reveal className="sec-head center">
@@ -121,34 +115,36 @@ export default function Mentoria() {
             </Reveal>
 
             <Reveal>
-              <div className="price-card ment-price-card">
-                <div className="price-grid">
-                  <div className="price-l">
-                    <h3>{MENTORIA.nome}</h3>
-                    <p className="sm">{MENTORIA.formato}</p>
-                    <ul className="price-list">
-                      {MENTORIA_INCLUI.map((i) => (
-                        <li key={i.titulo}><Check /><span><b style={{ fontWeight: 600 }}>{i.titulo}</b></span></li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="price-r">
-                    <div className="big ment-big">{MENTORIA.investimento}</div>
-                    <p className="avista">{MENTORIA.parcelado}, combinado direto comigo</p>
-                    <a href={MENTORIA_WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-amber btn-lg">
-                      <Whatsapp size={18} /> Garantir minha vaga
-                    </a>
-                    <div className="assure">
-                      <span><Shield size={15} /> Poucas vagas por mês</span>
-                    </div>
-                    <p className="mini-disclaimer" style={{ textAlign: "left", margin: "14px 0 0" }}>
-                      Mentoria educacional e de método: não sou conselheiro financeiro e nada aqui é recomendação ou
-                      garantia de resultado. Investir em criptomoedas envolve risco, inclusive de perda de capital, e
-                      cada decisão é de responsabilidade de quem a toma.
-                    </p>
+              <div className="ment-invest-grid">
+                <div className="ment-invest-plano">
+                  <h3>{MENTORIA.nome}</h3>
+                  <p className="sm">{MENTORIA.formato}</p>
+                  <ul className="price-list">
+                    {MENTORIA_INCLUI.map((i) => (
+                      <li key={i.titulo}><Check /><span><b style={{ fontWeight: 600 }}>{i.titulo}</b></span></li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="ment-invest-cta">
+                  <span className="ment-ancora-label">Oferta combinada</span>
+                  <span className="old ment-ancora">{MENTORIA.ancora}</span>
+                  <p className="ment-invest-txt">
+                    O investimento é combinado direto comigo, de acordo com a sua agenda e o seu momento. Me chama no
+                    WhatsApp que a gente conversa e já alinha tudo.
+                  </p>
+                  <a href={MENTORIA_WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn btn-amber btn-lg">
+                    <Whatsapp size={18} /> Falar com o Davidson
+                  </a>
+                  <div className="assure" style={{ marginTop: 14 }}>
+                    <span><Shield size={15} /> Poucas vagas por mês</span>
                   </div>
                 </div>
               </div>
+              <p className="mini-disclaimer" style={{ textAlign: "center", maxWidth: 560, margin: "24px auto 0" }}>
+                Mentoria educacional e de método: não sou conselheiro financeiro e nada aqui é recomendação ou garantia
+                de resultado. Investir em criptomoedas envolve risco, inclusive de perda de capital, e cada decisão é
+                de responsabilidade de quem a toma.
+              </p>
             </Reveal>
           </div>
         </section>

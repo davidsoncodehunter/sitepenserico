@@ -7,8 +7,7 @@ export const MENTORIA_WHATSAPP =
 export const MENTORIA = {
   nome: "Mentoria Cripto Personalizada",
   gancho: "Economize 1 ano de tentativa e erro em 12 horas comigo.",
-  investimento: "R$ 12.900,00",
-  parcelado: "ou 12x no cartão",
+  ancora: "R$ 14.900,00",
   cargaHoraria: "12 horas de aula individual ao vivo",
   suporte: "30 dias de suporte exclusivo comigo pelo WhatsApp depois da aula",
   formato: "100% online, individual. Agenda combinada com você, no horário da sua preferência.",

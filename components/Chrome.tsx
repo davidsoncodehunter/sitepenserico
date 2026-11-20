@@ -5,9 +5,7 @@ function Logo() {
   return (
     <Link href="/" className="logo" aria-label="Pense Rico, página inicial">
       <span className="logo-mark" aria-hidden>
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M7 17 17 7M9 7h8v8" />
-        </svg>
+        <span className="logo-r serif">R</span>
       </span>
       <span className="logo-text">Pense Rico</span>
     </Link>
