@@ -135,10 +135,9 @@ export default function Home() {
               ].map((s, i) => (
                 <Reveal key={s.label} delay={i * 90}>
                   <Spotlight className="stat">
-                    <span className="stat-ghost" aria-hidden>{s.n}</span>
-                    <span className="stat-ic"><s.Icone size={22} /></span>
+                    <span className="stat-ic"><s.Icone size={18} /></span>
                     <b className="grad"><Counter to={s.n} /></b>
-                    <span>{s.label}</span>
+                    <span className="stat-label">{s.label}</span>
                   </Spotlight>
                 </Reveal>
               ))}

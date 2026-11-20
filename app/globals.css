@@ -187,9 +187,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .bf-eyebrow { color: var(--muted); font-size: clamp(17px, 1.8vw, 20px); margin-bottom: 2px; }
 .bf-eyebrow .old { font-size: 1.15em; }
 .bf-hoje { color: var(--dim); font-size: clamp(20px, 2.2vw, 26px); margin-bottom: 2px; }
-.bf-big { font: 700 clamp(72px, 9vw, 128px)/0.95 var(--font-mono), monospace; letter-spacing: -0.04em; margin-bottom: 22px; }
+.bf-big { font: 700 clamp(56px, 7vw, 100px)/0.95 var(--font-mono), monospace; letter-spacing: -0.04em; margin-bottom: 24px; white-space: nowrap; }
+.bf-big sup { font-size: 0.4em; letter-spacing: -0.02em; vertical-align: 0.85em; margin-right: 6px; }
 .bf-desc { color: var(--muted); font-size: 16.5px; max-width: 480px; margin-bottom: 28px; }
-.bf-garantia { display: flex; align-items: center; gap: 7px; width: fit-content; margin-top: 18px; padding: 8px 16px; border-radius: 999px; background: rgba(255, 176, 32, 0.08); border: 1px solid rgba(255, 176, 32, 0.2); color: var(--muted); font-size: 13.5px; }
+.bf-garantia { display: flex; align-items: center; gap: 7px; width: fit-content; margin-top: 28px; padding: 8px 16px; border-radius: 999px; background: rgba(255, 176, 32, 0.08); border: 1px solid rgba(255, 176, 32, 0.2); color: var(--muted); font-size: 13.5px; }
 .bf-garantia svg { color: var(--amber); }
 @media (max-width: 860px) { .bf-grid { grid-template-columns: 1fr; } .bf-capas { max-width: 320px; margin-inline: auto; } }
 
@@ -207,22 +208,22 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* números */
 .stats-sec { position: relative; isolation: isolate; }
 .stats-bg {
-  position: absolute; inset: -40px 0 auto 0; height: 420px; z-index: -1; pointer-events: none;
+  position: absolute; inset: 0 0 auto 0; height: 100%; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(55% 60% at 50% 20%, rgba(255, 176, 32, 0.12), transparent 70%),
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 34px 34px,
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 34px 34px;
-  -webkit-mask: radial-gradient(60% 70% at 50% 25%, #000 40%, transparent 85%);
-  mask: radial-gradient(60% 70% at 50% 25%, #000 40%, transparent 85%);
+    radial-gradient(60% 55% at 50% 50%, rgba(255, 176, 32, 0.1), transparent 72%),
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px) 0 0 / 34px 34px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px) 0 0 / 34px 34px;
+  /* fade em todas as bordas: a grade nasce e morre no escuro, sem linha de corte */
+  -webkit-mask: radial-gradient(75% 65% at 50% 50%, #000 25%, transparent 78%);
+  mask: radial-gradient(75% 65% at 50% 50%, #000 25%, transparent 78%);
 }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.stat {
-  position: relative; padding: clamp(26px, 3.4vw, 38px) clamp(22px, 2.6vw, 30px); border-radius: 22px;
-}
-.stat .stat-ghost { display: block; position: absolute; top: -0.18em; right: 8px; margin-top: 0; z-index: 0; font: 700 clamp(70px, 9vw, 120px)/1 var(--font-mono), monospace; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1.5px rgba(255, 190, 70, 0.16); pointer-events: none; }
-.stat .stat-ic { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 13px; background: var(--grad-amber); color: #1a1100; margin-bottom: 16px; box-shadow: 0 10px 24px -8px rgba(255, 176, 32, 0.65); }
-.stat b { position: relative; z-index: 1; display: block; font-size: clamp(38px, 5.2vw, 58px); font-weight: 600; letter-spacing: -0.05em; line-height: 1; }
-.stat span { position: relative; z-index: 1; display: block; margin-top: 10px; color: var(--muted); font-size: 15px; }
+.stat { position: relative; padding: clamp(28px, 3.4vw, 40px) clamp(24px, 2.6vw, 32px); border-radius: 22px; }
+/* ícone discreto: só contorno âmbar, não bloco sólido competindo com o número */
+.stat .stat-ic { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(255, 176, 32, 0.1); border: 1px solid rgba(255, 176, 32, 0.28); color: var(--amber); margin-bottom: 20px; }
+/* o número É o herói do card: grande, na fonte da marca, com o degradê âmbar */
+.stat b { position: relative; z-index: 1; display: block; font-size: clamp(56px, 7vw, 86px); font-weight: 600; letter-spacing: -0.06em; line-height: 0.9; }
+.stat .stat-label { position: relative; z-index: 1; display: block; margin-top: 14px; color: var(--muted); font-size: 14px; letter-spacing: 0.01em; }
 @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } }
 
 /* método: trilha */
