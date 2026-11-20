@@ -92,7 +92,7 @@ export const MENTORIA_FAQ = [
   },
   {
     p: "Os bônus (cursos e material) entram de verdade?",
-    r: "Sim. Quem fecha a mentoria recebe acesso aos 4 cursos completos do Pense Rico e aos bônus do combo, sem custo extra.",
+    r: "Sim. Quem fecha a mentoria recebe acesso aos 4 cursos completos do Pense Rico e aos bônus exclusivos da mentoria, sem custo extra.",
   },
   {
     p: "Isso garante lucro ou resultado?",

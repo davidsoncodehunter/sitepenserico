@@ -4,6 +4,10 @@ export const COMBO_CHECKOUT = "https://pay.hotmart.com/W102392561B?checkoutMode=
 
 export const PIXEL_ID = "272592461997638";
 
+// Prazo real da Black Friday — mesma data para todo mundo, sem reset por visita.
+// Quando passar, o Countdown some sozinho. Para um novo ciclo, troque esta data.
+export const BLACK_FRIDAY_FIM = "2026-11-27T23:59:59-03:00";
+
 export const OFERTA = {
   de: "R$ 6.292,00",
   parcelas: "12x R$ 134,45",

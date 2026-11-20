@@ -37,10 +37,10 @@ Regra fixa: antes de qualquer edição, leia o GUIA.md. Nunca apague nada de "vi
 Todas gratuitas. Você não instala nada: ele instala e testa.
 
 <div class="ferr">
-  <div><b>Remotion</b>as animações, feitas em código</div>
-  <div><b>FFmpeg</b>cortes, cor e som</div>
-  <div><b>Whisper</b>legenda palavra por palavra</div>
-  <div><b>yt-dlp</b>baixa os vídeos de referência</div>
+  <div><b>Remotion:</b> as animações, feitas em código</div>
+  <div><b>FFmpeg:</b> cortes, cor e som</div>
+  <div><b>Whisper:</b> legenda palavra por palavra</div>
+  <div><b>yt-dlp:</b> baixa os vídeos de referência</div>
 </div>
 
 ```

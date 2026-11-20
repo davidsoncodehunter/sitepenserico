@@ -69,9 +69,9 @@ export default function Mentoria() {
             </Reveal>
             <div className="ment-inclui">
               {MENTORIA_INCLUI.map((i, idx) => (
-                <Reveal key={i.titulo} delay={idx * 70} className={idx === 0 ? "ment-item-feat" : "ment-item"}>
+                <Reveal key={i.titulo} delay={idx * 70} className="ment-item">
+                  <span className="ment-item-ic"><Check size={20} /></span>
                   <div>
-                    <span className="ment-item-ic"><Check size={idx === 0 ? 26 : 20} /></span>
                     <h4>{i.titulo}</h4>
                     <p>{i.texto}</p>
                   </div>
@@ -81,7 +81,7 @@ export default function Mentoria() {
           </div>
         </section>
 
-        {/* FOCOS — grade assimétrica, ícones com brilho */}
+        {/* FOCOS — grade simétrica, ícones com brilho */}
         <section className="sec" style={{ background: "var(--bg-2)", borderBlock: "1px solid var(--line)" }}>
           <div className="wrap">
             <Reveal className="sec-head">
@@ -92,12 +92,10 @@ export default function Mentoria() {
               {MENTORIA_FOCOS.map((f, i) => {
                 const Icone = ICONES[f.icone as keyof typeof ICONES];
                 return (
-                  <Reveal key={f.titulo} delay={(i % 3) * 80} className={`ment-foco ment-foco-${i}`}>
-                    <div>
-                      <span className="ment-foco-ic"><Icone size={24} /></span>
-                      <h4>{f.titulo}</h4>
-                      <p>{f.texto}</p>
-                    </div>
+                  <Reveal key={f.titulo} delay={(i % 3) * 80} className="ment-foco">
+                    <span className="ment-foco-ic"><Icone size={22} /></span>
+                    <h4>{f.titulo}</h4>
+                    <p>{f.texto}</p>
                   </Reveal>
                 );
               })}

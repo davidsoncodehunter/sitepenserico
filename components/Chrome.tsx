@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Arrow } from "./Icons";
+import { COMBO_CHECKOUT } from "@/lib/produtos";
 
 function Logo() {
   return (
@@ -22,12 +23,12 @@ export function Header() {
           <li><Link href="/#metodo">Método</Link></li>
           <li><Link href="/#autor">Quem ensina</Link></li>
           <li><Link href="/#faq">Dúvidas</Link></li>
-          <li><Link href="/tutoriais">Tutoriais</Link></li>
           <li><Link href="/mentoria" className="nav-ment">Mentoria 1:1</Link></li>
+          <li><Link href="/tutoriais">Tutoriais</Link></li>
         </ul>
-        <Link href="/#oferta" className="nav-cta">
+        <a href={COMBO_CHECKOUT} target="_blank" rel="noopener noreferrer" className="nav-cta">
           Quero o combo <Arrow size={15} />
-        </Link>
+        </a>
       </nav>
     </header>
   );

@@ -3,10 +3,11 @@ import BarraCompra from "@/components/BarraCompra";
 import Capa from "@/components/Capa";
 import Checkout from "@/components/Checkout";
 import { Footer, Header } from "@/components/Chrome";
+import Countdown from "@/components/Countdown";
 import Counter from "@/components/Counter";
 import FaixaBlackFriday from "@/components/FaixaBlackFriday";
 import FotoSlot from "@/components/FotoSlot";
-import { Arrow, BarChart, Book, Check, Clock, Instagram, Plus, Send, Shield, Users, Whatsapp, Youtube } from "@/components/Icons";
+import { Arrow, BarChart, Book, Check, Clock, Instagram, Layers, Plus, Send, Shield, Users, Whatsapp, Youtube } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 import SlideCta from "@/components/SlideCta";
 import Spotlight from "@/components/Spotlight";
@@ -107,6 +108,9 @@ export default function Home() {
                   <Capa numero={p.numero} nome={p.nome} src={p.capa ?? undefined} />
                 </Link>
               ))}
+              <Link href="/mentoria" className="fan-link fan-link-ment" aria-label="Conhecer a Mentoria 1:1">
+                <Capa numero="05" nome="Mentoria 1:1" src="/fotos/mentoria-premium.png" className="fan-ment" />
+              </Link>
             </div>
           </div>
         </section>
@@ -123,10 +127,10 @@ export default function Home() {
           <div className="wrap">
             <Reveal>
               <div className="stats">
-                <div className="stat"><b className="grad"><Counter to={4} /></b><span>cursos completos</span></div>
-                <div className="stat"><b className="grad"><Counter to={12} /></b><span>meses de acesso</span></div>
-                <div className="stat"><b className="grad"><Counter to={7} /></b><span>dias de garantia</span></div>
-                <div className="stat"><b className="grad"><Counter to={1} /></b><span>grupo no Telegram</span></div>
+                <div className="stat"><span className="stat-ic"><Layers size={20} /></span><b className="grad"><Counter to={4} /></b><span>cursos completos</span></div>
+                <div className="stat"><span className="stat-ic"><Clock size={20} /></span><b className="grad"><Counter to={12} /></b><span>meses de acesso</span></div>
+                <div className="stat"><span className="stat-ic"><Shield size={20} /></span><b className="grad"><Counter to={7} /></b><span>dias de garantia</span></div>
+                <div className="stat"><span className="stat-ic"><Send size={20} /></span><b className="grad"><Counter to={1} /></b><span>grupo no Telegram</span></div>
               </div>
             </Reveal>
           </div>
@@ -272,6 +276,7 @@ export default function Home() {
                     <span className="old">de {OFERTA.de}</span>
                     <div className="big"><small>{OFERTA.parcelaQtd}</small><sup>R$</sup>{OFERTA.parcelaInteiro}<span style={{ fontSize: "0.5em" }}>,{OFERTA.parcelaCentavos}</span></div>
                     <p className="avista">ou <b>{OFERTA.avista}</b> à vista</p>
+                    <Countdown />
                     <Checkout href={COMBO_CHECKOUT} value={1299.99} className="btn btn-amber btn-lg">Garantir minha vaga</Checkout>
                     <div className="assure">
                       <span><Shield size={15} /> {OFERTA.garantiaDias} dias de garantia</span>
