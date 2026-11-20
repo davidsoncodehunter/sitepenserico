@@ -26,10 +26,10 @@ export default function FaixaBlackFriday() {
 
         <div className="bf-tx">
           <span className="badge"><b>Black Friday</b> os 4 cursos, de uma vez só</span>
-          <h2 className="h-grad">
-            Separado custaria <span className="old">{OFERTA.de}</span>. Hoje, <span className="serif grad">{OFERTA.avista}</span>.
-          </h2>
-          <p>
+          <p className="bf-eyebrow">Separado custaria <span className="old">{OFERTA.de}</span></p>
+          <p className="bf-hoje serif">Hoje,</p>
+          <div className="bf-big grad">{OFERTA.avista}</div>
+          <p className="bf-desc">
             Depois que a Black Friday acabar, o combo some do ar e cada curso volta a ser vendido pelo seu próprio
             preço. Enquanto durar, você leva os 4 por um preço só.
           </p>

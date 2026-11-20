@@ -123,16 +123,26 @@ export default function Home() {
         </div>
 
         {/* NÚMEROS */}
-        <section className="sec" style={{ paddingBottom: 0 }}>
+        <section className="sec stats-sec" style={{ paddingBottom: 0 }}>
+          <div className="stats-bg" aria-hidden />
           <div className="wrap">
-            <Reveal>
-              <div className="stats">
-                <div className="stat"><span className="stat-ic"><Layers size={20} /></span><b className="grad"><Counter to={4} /></b><span>cursos completos</span></div>
-                <div className="stat"><span className="stat-ic"><Clock size={20} /></span><b className="grad"><Counter to={12} /></b><span>meses de acesso</span></div>
-                <div className="stat"><span className="stat-ic"><Shield size={20} /></span><b className="grad"><Counter to={7} /></b><span>dias de garantia</span></div>
-                <div className="stat"><span className="stat-ic"><Send size={20} /></span><b className="grad"><Counter to={1} /></b><span>grupo no Telegram</span></div>
-              </div>
-            </Reveal>
+            <div className="stats">
+              {[
+                { n: 4, Icone: Layers, label: "cursos completos" },
+                { n: 12, Icone: Clock, label: "meses de acesso" },
+                { n: 7, Icone: Shield, label: "dias de garantia" },
+                { n: 1, Icone: Send, label: "grupo no Telegram" },
+              ].map((s, i) => (
+                <Reveal key={s.label} delay={i * 90}>
+                  <Spotlight className="stat">
+                    <span className="stat-ghost" aria-hidden>{s.n}</span>
+                    <span className="stat-ic"><s.Icone size={22} /></span>
+                    <b className="grad"><Counter to={s.n} /></b>
+                    <span>{s.label}</span>
+                  </Spotlight>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
