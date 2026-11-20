@@ -39,3 +39,15 @@ export const Instagram = ({ size = 18, className }: P) => (
 export const Youtube = ({ size = 18, className }: P) => (
   <svg {...base(size)} className={className}><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></svg>
 );
+export const Whatsapp = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className}><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.4Z" /><path d="M8.5 8.5c0 4 3 7 7 7 .6 0 1-.5.9-1.1l-.4-1.6a.9.9 0 0 0-1-.6l-1.5.3a5.6 5.6 0 0 1-2.5-2.5l.3-1.5a.9.9 0 0 0-.6-1l-1.6-.4A1 1 0 0 0 8 8.5Z" /></svg>
+);
+export const Book = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className}><path d="M12 7c-2-2-5-2-7-1v13c2-1 5-1 7 1 2-2 5-2 7-1V6c-2-1-5-1-7 1Z" /><path d="M12 7v13" /></svg>
+);
+export const Users = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className}><circle cx="9" cy="8" r="3.3" /><path d="M2.5 20c0-3.3 3-5.8 6.5-5.8s6.5 2.5 6.5 5.8" /><circle cx="17.5" cy="8.5" r="2.4" /><path d="M16 14.3c2.3.4 4.2 2 4.8 4.4" /></svg>
+);
+export const BarChart = ({ size = 18, className }: P) => (
+  <svg {...base(size)} className={className}><path d="M4 19V11M10 19V5M16 19v-6M21 19v-9" /></svg>
+);

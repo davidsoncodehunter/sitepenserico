@@ -49,6 +49,7 @@ export function Footer() {
               <Link href="/#cursos">Cursos</Link>
               <Link href="/#oferta">Oferta</Link>
               <Link href="/#faq">Dúvidas</Link>
+              <Link href="/mentoria">Mentoria 1:1</Link>
             </div>
             <div>
               <h4>Conteúdo</h4>
@@ -60,6 +61,7 @@ export function Footer() {
               <Link href="/privacidade">Privacidade</Link>
               <Link href="/termos">Termos de uso</Link>
               <a href="mailto:pensericodigital@gmail.com">Falar com a gente</a>
+              <a href="https://wa.me/5561981177731" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
           </div>
         </div>

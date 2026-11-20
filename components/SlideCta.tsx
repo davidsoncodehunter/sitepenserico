@@ -20,8 +20,8 @@ export default function SlideCta({ href, label = "Deslize para garantir sua vaga
   const go = () => {
     setDone(true);
     setX(max());
-    window.fbq?.("track", "InitiateCheckout", { value: 1497, currency: "BRL" });
-    window.setTimeout(() => { window.location.href = href; }, 380);
+    window.fbq?.("track", "InitiateCheckout", { value: 1299.99, currency: "BRL" });
+    window.setTimeout(() => { window.open(href, "_blank", "noopener,noreferrer"); }, 380);
   };
 
   const onDown = (e: React.PointerEvent) => {

@@ -5,9 +5,12 @@ export const COMBO_CHECKOUT = "https://pay.hotmart.com/W102392561B?checkoutMode=
 export const PIXEL_ID = "272592461997638";
 
 export const OFERTA = {
-  de: "R$ 7.108,00",
-  parcelas: "12x R$ 154,82",
-  avista: "R$ 1.497,00",
+  de: "R$ 6.292,00",
+  parcelas: "12x R$ 134,45",
+  parcelaQtd: "12x",
+  parcelaInteiro: "134",
+  parcelaCentavos: "45",
+  avista: "R$ 1.299,99",
   garantiaDias: 7,
   acesso: "1 ano",
 };
@@ -21,6 +24,8 @@ export type Produto = {
   aprende: string[];
   paraQuem: string;
   checkout: string | null;
+  /** valor de venda avulsa (hoje só referência: soma dos 4 bate nos R$ 6.292 do combo) */
+  valor: string;
   /** arte da capa em /public/fotos; null usa a capa desenhada em CSS */
   capa: string | null;
 };
@@ -41,6 +46,7 @@ export const PRODUTOS: Produto[] = [
     ],
     paraQuem: "Para quem quer operar futuros com regras, não com palpite.",
     checkout: null,
+    valor: "R$ 1.497,00",
     capa: "/fotos/capa-if30.png",
   },
   {
@@ -59,6 +65,7 @@ export const PRODUTOS: Produto[] = [
     ],
     paraQuem: "Para quem não quer mais depender do sistema para cuidar do próprio dinheiro.",
     checkout: null,
+    valor: "R$ 997,00",
     capa: "/fotos/capa-bitcoin-express.png",
   },
   {
@@ -76,6 +83,7 @@ export const PRODUTOS: Produto[] = [
     ],
     paraQuem: "Para quem quer começar do zero absoluto e caminhar com as próprias pernas.",
     checkout: null,
+    valor: "R$ 1.899,00",
     capa: "/fotos/capa-formacao-pense-rico.png",
   },
   {
@@ -93,20 +101,29 @@ export const PRODUTOS: Produto[] = [
     ],
     paraQuem: "Para quem aprende vendo de verdade: dinheiro real, decisões reais, toda semana.",
     checkout: null,
+    valor: "R$ 1.899,00",
     capa: "/fotos/capa-minha-carteira-rica.png",
   },
 ];
 
 export const BONUS = [
   {
-    titulo: "Biblioteca do investidor",
-    texto: "Um drive completo de livros selecionados sobre mercado, investimentos e mentalidade, para estudar junto com os cursos.",
+    icone: "Book",
+    titulo: "Mais de 500 livros em Drive",
+    texto: "Uma biblioteca com mais de 500 livros selecionados sobre mercado, investimentos e mentalidade, liberada assim que você entra no combo.",
   },
   {
-    titulo: "Indicador Pense Rico no TradingView",
-    texto: "O indicador exclusivo do Pense Rico direto no seu TradingView, para acompanhar o mercado com a mesma leitura ensinada nas aulas.",
+    icone: "Users",
+    titulo: "Grupo VIP para tirar dúvida",
+    texto: "Acesso ao grupo fechado para tirar dúvida direto com quem também está estudando e operando com você.",
   },
   {
+    icone: "BarChart",
+    titulo: "Acesso à Crypto Rico",
+    texto: "Plataforma de análise de carteira com IA e indicadores técnicos de compra — sozinha, custaria R$ 199 por mês. Aqui vem incluída.",
+  },
+  {
+    icone: "Clock",
     titulo: "Aulas bônus durante toda a permanência",
     texto: "Novas aulas bônus vão sendo adicionadas ao longo do seu acesso, sem custo extra: o conteúdo continua crescendo depois da compra.",
   },

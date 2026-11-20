@@ -4,8 +4,9 @@ import Capa from "@/components/Capa";
 import Checkout from "@/components/Checkout";
 import { Footer, Header } from "@/components/Chrome";
 import Counter from "@/components/Counter";
+import FaixaBlackFriday from "@/components/FaixaBlackFriday";
 import FotoSlot from "@/components/FotoSlot";
-import { Arrow, Check, Clock, Instagram, Plus, Send, Shield, Youtube } from "@/components/Icons";
+import { Arrow, BarChart, Book, Check, Clock, Instagram, Plus, Send, Shield, Users, Whatsapp, Youtube } from "@/components/Icons";
 import Reveal from "@/components/Reveal";
 import SlideCta from "@/components/SlideCta";
 import Spotlight from "@/components/Spotlight";
@@ -13,6 +14,8 @@ import Tilt from "@/components/Tilt";
 import { BONUS, COMBO_CHECKOUT, FAQ, OFERTA, PRODUTOS } from "@/lib/produtos";
 
 const TAPE = ["Bitcoin", "Futuros", "Carteira", "Mentalidade", "Segurança", "Método", "Disciplina", "DeFi"];
+
+const BONUS_ICONES = { Book, Users, BarChart, Clock };
 
 const TRILHA = [
   { slug: "formacao-pense-rico", t: "Mentalidade primeiro", d: "Antes de qualquer ferramenta, a cabeça de quem investe: comportamento, paciência e decisão sem emoção." },
@@ -33,7 +36,7 @@ const DADOS_PAGINA = {
       brand: { "@type": "Brand", name: "Pense Rico" },
       offers: {
         "@type": "Offer",
-        price: "1497.00",
+        price: "1299.99",
         priceCurrency: "BRL",
         availability: "https://schema.org/InStock",
         url: "https://openserico.com.br/#oferta",
@@ -83,7 +86,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={270}>
               <div className="ctas">
-                <Checkout href={COMBO_CHECKOUT} value={1497} className="btn btn-amber btn-lg">Quero o combo</Checkout>
+                <Checkout href={COMBO_CHECKOUT} value={1299.99} className="btn btn-amber btn-lg">Quero o combo</Checkout>
                 <Link href="#cursos" className="btn btn-line btn-lg">Ver os 4 cursos</Link>
               </div>
             </Reveal>
@@ -223,6 +226,9 @@ export default function Home() {
                 <a href="https://www.youtube.com/@PenseRico" target="_blank" rel="noopener noreferrer" aria-label="Canal Pense Rico no YouTube">
                   <Youtube size={17} /><span>Pense Rico</span>
                 </a>
+                <a href="https://wa.me/5561981177731" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+                  <Whatsapp size={17} /><span>WhatsApp</span>
+                </a>
               </div>
             </Reveal>
           </div>
@@ -245,18 +251,28 @@ export default function Home() {
                     <p className="sm">Tudo o que você precisa para começar com método.</p>
                     <ul className="price-list">
                       {PRODUTOS.map((p) => (
-                        <li key={p.slug}><Check /><span><b style={{ fontWeight: 600 }}>{p.nome}</b><small>{p.gancho}</small></span></li>
+                        <li key={p.slug}>
+                          <Check />
+                          <span>
+                            <b style={{ fontWeight: 600 }}>{p.nome}</b>
+                            <small>{p.gancho}</small>
+                          </span>
+                          <em className="item-valor">{p.valor}</em>
+                        </li>
                       ))}
                       <li><Check /><span>Grupo no Telegram<small>Tire dúvidas e acompanhe com a comunidade</small></span></li>
                       <li><Check /><span>Acesso por {OFERTA.acesso}<small>Estude no seu ritmo</small></span></li>
                       <li><Check /><span>Bônus exclusivos</span></li>
                     </ul>
+                    <p className="soma-valor">
+                      Valor somado dos 4 cursos: <b>{OFERTA.de}</b>
+                    </p>
                   </div>
                   <div className="price-r">
                     <span className="old">de {OFERTA.de}</span>
-                    <div className="big"><small>12x</small><sup>R$</sup>154<span style={{ fontSize: "0.5em" }}>,82</span></div>
+                    <div className="big"><small>{OFERTA.parcelaQtd}</small><sup>R$</sup>{OFERTA.parcelaInteiro}<span style={{ fontSize: "0.5em" }}>,{OFERTA.parcelaCentavos}</span></div>
                     <p className="avista">ou <b>{OFERTA.avista}</b> à vista</p>
-                    <Checkout href={COMBO_CHECKOUT} value={1497} className="btn btn-amber btn-lg">Garantir minha vaga</Checkout>
+                    <Checkout href={COMBO_CHECKOUT} value={1299.99} className="btn btn-amber btn-lg">Garantir minha vaga</Checkout>
                     <div className="assure">
                       <span><Shield size={15} /> {OFERTA.garantiaDias} dias de garantia</span>
                       <span><Check size={15} /> Compra segura pela Hotmart</span>
@@ -271,11 +287,19 @@ export default function Home() {
             </Reveal>
 
             <div className="bonus">
-              {BONUS.map((b, i) => (
-                <Reveal key={b.titulo} delay={i * 90}>
-                  <div className="bonus-c"><span className="tag">Bônus 0{i + 1}</span><h4>{b.titulo}</h4><p>{b.texto}</p></div>
-                </Reveal>
-              ))}
+              {BONUS.map((b, i) => {
+                const Icone = BONUS_ICONES[b.icone as keyof typeof BONUS_ICONES];
+                return (
+                  <Reveal key={b.titulo} delay={i * 90}>
+                    <div className="bonus-c">
+                      <span className="bonus-ic"><Icone size={20} /></span>
+                      <span className="tag">Bônus 0{i + 1}</span>
+                      <h4>{b.titulo}</h4>
+                      <p>{b.texto}</p>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -326,7 +350,7 @@ export default function Home() {
               <h2 className="h-grad">O mercado não espera. <span className="serif grad">Prepare-se</span> antes de entrar.</h2>
               <div className="ctas"><SlideCta href={COMBO_CHECKOUT} /></div>
               <p style={{ marginTop: 18, color: "var(--dim)", fontSize: 14 }}>
-                ou <Link href={COMBO_CHECKOUT} style={{ color: "var(--amber)", textDecoration: "underline" }}>clique aqui para ir direto ao checkout</Link>
+                ou <Link href={COMBO_CHECKOUT} target="_blank" rel="noopener noreferrer" style={{ color: "var(--amber)", textDecoration: "underline" }}>clique aqui para ir direto ao checkout</Link>
               </p>
               <p className="mini-disclaimer">
                 Conteúdo educacional: não sou conselheiro financeiro e nada aqui é recomendação ou conselho de
@@ -336,6 +360,8 @@ export default function Home() {
           </div>
           <div className="stage" aria-hidden><div className="horizon" /></div>
         </section>
+
+        <FaixaBlackFriday />
       </main>
       <BarraCompra />
       <Footer />

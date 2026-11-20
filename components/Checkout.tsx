@@ -15,6 +15,8 @@ export default function Checkout({ href, children, className = "btn btn-amber", 
     <a
       href={href}
       className={className}
+      target="_blank"
+      rel="noopener noreferrer"
       onClick={() => window.fbq?.("track", "InitiateCheckout", value ? { value, currency: "BRL" } : undefined)}
     >
       {children} <span className="arrow" aria-hidden>→</span>

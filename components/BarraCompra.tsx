@@ -21,7 +21,7 @@ export default function BarraCompra() {
         <b>{OFERTA.parcelas}</b>
         <span>ou {OFERTA.avista} à vista</span>
       </div>
-      <Checkout href={COMBO_CHECKOUT} value={1497} className="btn btn-amber">
+      <Checkout href={COMBO_CHECKOUT} value={1299.99} className="btn btn-amber">
         Quero o combo
       </Checkout>
     </div>

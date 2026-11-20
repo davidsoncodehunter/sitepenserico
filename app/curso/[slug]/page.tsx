@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Capa from "@/components/Capa";
 import Checkout from "@/components/Checkout";
 import { Footer, Header } from "@/components/Chrome";
-import { Arrow, Check } from "@/components/Icons";
+import { Arrow, Check, Shield } from "@/components/Icons";
 import { COMBO_CHECKOUT, OFERTA, PRODUTOS } from "@/lib/produtos";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -32,7 +32,8 @@ export default async function Curso({ params }: Props) {
           <div className="hero-bg" aria-hidden />
           <div className="wrap">
             <Link href="/#cursos" className="crumb"><Arrow size={15} /> Todos os cursos</Link>
-            <h1 className="h-grad">{p.nome}: <span className="serif grad">{p.gancho.toLowerCase()}</span></h1>
+            <span className="badge"><b>Black Friday</b> incluso no Combo Pense Rico</span>
+            <h1 className="h-grad" style={{ marginTop: 16 }}>{p.nome}: <span className="serif grad">{p.gancho.toLowerCase()}</span></h1>
             <p className="lead">{p.descricao}</p>
           </div>
         </section>
@@ -47,11 +48,18 @@ export default async function Curso({ params }: Props) {
             <aside className="side">
               <Capa numero={p.numero} nome={p.nome} src={p.capa ?? undefined} />
               <div className="box">
-                <h4>Faz parte do combo</h4>
-                <p>Leve os 4 cursos por {OFERTA.parcelas} ou {OFERTA.avista} à vista. {OFERTA.garantiaDias} dias de garantia.</p>
-                <Checkout href={COMBO_CHECKOUT} value={1497} className="btn btn-amber">Quero o combo completo</Checkout>
+                <h4>Este curso já está no combo</h4>
+                <p className="valor-avulso">Valor avulso: <span className="old">{p.valor}</span></p>
+                <p>
+                  Leve este e mais 3 cursos completos — {OFERTA.parcelas} ou {OFERTA.avista} à vista, em vez dos{" "}
+                  {OFERTA.de} somados. {OFERTA.garantiaDias} dias de garantia.
+                </p>
+                <Checkout href={COMBO_CHECKOUT} value={1299.99} className="btn btn-amber">Quero o combo completo</Checkout>
+                <div className="assure" style={{ marginTop: 14 }}>
+                  <span><Shield size={15} /> {OFERTA.garantiaDias} dias de garantia</span>
+                </div>
                 {p.checkout && (
-                  <p style={{ margin: "16px 0 0" }}><a className="more" href={p.checkout}>Comprar só o {p.nome} <Arrow size={16} /></a></p>
+                  <p style={{ margin: "16px 0 0" }}><a className="more" href={p.checkout} target="_blank" rel="noopener noreferrer">Comprar só o {p.nome} <Arrow size={16} /></a></p>
                 )}
               </div>
             </aside>

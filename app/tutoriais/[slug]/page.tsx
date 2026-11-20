@@ -73,7 +73,7 @@ export default async function TutorialPage({ params }: Props) {
                 <h3>Quer ir além dos tutoriais?</h3>
                 <p>Conheça o combo com os 4 cursos completos do Pense Rico.</p>
               </div>
-              <Checkout href={COMBO_CHECKOUT} value={1497} className="btn btn-amber">Ver o combo</Checkout>
+              <Checkout href={COMBO_CHECKOUT} value={1299.99} className="btn btn-amber">Ver o combo</Checkout>
             </div>
           </div>
         </section>
