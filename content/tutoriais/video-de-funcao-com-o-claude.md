@@ -212,7 +212,11 @@ Antes de entregar, confira: tela preta no meio, primeiro quadro (é a capa), nú
 
 ## Passo 9: A skill pronta
 
-A skill **video-lancamento** acompanha este kit em um arquivo zip (skill-video-lancamento.zip). Ela traz o passo a passo, os efeitos em Remotion, um exemplo que já renderiza deitado e em pé e o script de conferência.
+A skill **video-lancamento** traz o passo a passo, os efeitos em Remotion, um exemplo que já renderiza deitado e em pé e o script de conferência. Baixe o arquivo:
+
+<a class="t-download" href="/downloads/skill-video-lancamento.zip" download>Baixar a skill (zip) <small>14 KB</small></a>
+
+O exemplo é genérico: não traz marca, tela, take nem música de ninguém. Use os seus.
 
 **Instalar**
 

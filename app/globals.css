@@ -699,3 +699,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 860px) { .ment-invest-grid { grid-template-columns: 1fr; } .ment-invest-cta { border-left: 0; border-top: 1px solid var(--line); } }
 .bonus-c { position: relative; }
 .bonus-ic { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 176, 32, 0.12); color: var(--amber); margin-bottom: 12px; }
+
+/* botão de baixar dentro do tutorial */
+.tbody a.t-download { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; margin: 6px 0 18px; border-radius: 999px; background: var(--grad-amber); color: #1a1100; font-weight: 600; font-size: 16px; text-decoration: none; box-shadow: 0 12px 32px -10px rgba(255, 176, 32, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.45); transition: transform 0.25s var(--ease), box-shadow 0.25s; }
+.tbody a.t-download:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(255, 176, 32, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.55); }
+.tbody a.t-download small { font-weight: 500; opacity: 0.7; font-size: 13px; }
