@@ -7,18 +7,18 @@ categoria: inteligencia-artificial
 nivel: Iniciante
 data: 2026-11-11
 ordem: 1
-rascunho: sim
 ---
 
 Este é o passo a passo do vídeo, com os prompts prontos para copiar e colar. São as ferramentas que eu uso nos meus vídeos — todas gratuitas: o Claude instala, testa e edita por você.
 
 > **Importante:** instale o app do Claude no computador (Mac ou Windows) e use a aba **Code**, que mexe nos seus arquivos. Assim ele cria pasta, instala ferramenta e gera o vídeo sozinho.
 
-## O que você vai precisar
+## Antes de começar
 
-- O app do Claude instalado no computador (Mac ou Windows)
+- O app do Claude instalado no computador (Mac ou Windows), na aba **Code**
 - Cole **um prompt por vez** e espere ele terminar antes do próximo
 - Troque o que está entre [colchetes] pelos seus dados
+- Quando o Claude pedir permissão para criar pasta ou instalar algo, leia e aceite: é assim que ele trabalha por você
 
 ## Passo 1: Configuração
 
@@ -44,12 +44,12 @@ Todas gratuitas. Você não instala nada: ele instala e testa.
 </div>
 
 ```
-Instale e teste no meu computador: Node.js com Remotion, FFmpeg, whisper.cpp com o modelo large-v3-turbo, e yt-dlp. No Mac, use o Homebrew. No fim, rode um teste rápido de cada um e me diga o que funcionou.
+Instale e teste no meu computador: Node.js com Remotion, FFmpeg, whisper.cpp com o modelo large-v3-turbo, e yt-dlp. No Mac, use o Homebrew; no Windows, use o winget. No fim, rode um teste rápido de cada um e me diga o que funcionou e o que falhou.
 ```
 
 ## Passo 3: O detalhe que dá acabamento — sons e imagens grátis
 
-É o que separa um vídeo amador de um vídeo bem acabado. O Pexels entrega imagem e vídeo de graça: crie a sua chave em pexels.com/api e passe para o Claude guardar.
+É o que separa um vídeo amador de um vídeo bem acabado. O Pexels entrega imagem e vídeo de graça: crie a sua chave em pexels.com/api e passe para o Claude guardar. Ela é pessoal: não publique nem mande em grupo.
 
 ```
 Crie a pasta "sons" dentro de "Editor de Vídeo" e monte um banco de efeitos sonoros: whoosh curto e macio, clique discreto, grave caindo e um riser de 2 segundos. Crie com o FFmpeg ou baixe de um banco de licença livre, e anote a licença de cada um num LEIA-ME.
@@ -77,7 +77,7 @@ Vale só a técnica: nunca copie o vídeo nem a fala de ninguém.
 
 ## Passo 5: Edição
 
-Grave, jogue o arquivo em "videos brutos" e cole:
+Grave o vídeo, coloque o arquivo em "videos brutos" e cole:
 
 ```
 Edite "videos brutos/[nome].mp4" seguindo o GUIA.md:
@@ -100,4 +100,6 @@ Combinado: quando eu aprovar um vídeo, anote no GUIA.md, em "Aprovado", o que e
 
 ## Próximos passos
 
-Pronto: a partir daqui é gravar, jogar na pasta e colar o prompt de edição. Quando os próximos tutoriais desta categoria chegarem, os botões **Anterior** e **Próximo** aparecem aqui embaixo sozinhos.
+Pronto: a partir daqui é gravar, colocar o arquivo na pasta e colar o prompt de edição. Se alguma coisa sair diferente do que você queria, diga com as suas palavras o que não gostou e peça o ajuste: ele anota no GUIA.md e não repete o erro.
+
+Comece com um vídeo curto, de 30 a 60 segundos. Assim você aprende o ritmo antes de editar algo maior.
