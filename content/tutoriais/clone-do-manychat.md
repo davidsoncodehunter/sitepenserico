@@ -1,8 +1,8 @@
 ---
-titulo: Automação de Instagram com o Claude
-tarja1: Automação de Instagram
-tarja2: com o Claude
-resumo: O prompt para o Claude montar um sistema de automação de Instagram (comentário vira DM) e o passo a passo para criar as contas e configurar o app da Meta.
+titulo: Clone do ManyChat
+tarja1: Clone do
+tarja2: ManyChat
+resumo: O prompt para o Claude construir o seu clone do ManyChat para Instagram (comentário vira DM) e o passo a passo para criar as contas e configurar o app da Meta.
 categoria: inteligencia-artificial
 nivel: Avançado
 data: 2026-11-24
